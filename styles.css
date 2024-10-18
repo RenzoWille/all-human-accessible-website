@@ -1,0 +1,258 @@
+*{
+    font-family: "Archivo";
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Stijlen voor het header-gedeelte */
+header {
+    h1 {
+        font-size: 48px; /* Kleinere schermen standaard */
+    }
+    h2 {
+        font-size: 32px;
+    }
+    p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 96px; /* Grotere schermen */
+    }
+    header h2 {
+        font-size: 64px; 
+    }
+    header p {
+        font-size: 18px;
+    }
+}
+
+.topnav {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    padding-bottom: 30px;
+}
+
+.topnav img {
+    height: 75px; 
+    width: auto; 
+}
+
+.nav-links, .right-links {
+    display: none; /* Verborgen op mobiel */
+}
+
+.hamburger {
+    display: block; 
+    font-size: 30px; 
+    cursor: pointer; 
+    margin-left: auto; 
+}
+
+.mobile-menu {
+    display: none; 
+}
+
+@media (min-width: 768px) {
+    .topnav {
+        flex-direction: row; 
+        justify-content: space-between; 
+        padding-bottom: 50px;
+    }
+
+    .nav-links,
+    .right-links {
+        display: flex; /* Alleen zichtbaar op grotere schermen */
+        align-items: center;
+    }
+
+    .hamburger {
+        display: none; /* Verborgen op grotere schermen */
+    }
+
+    .mobile-menu {
+        display: none; 
+    }
+
+    .mobile-menu.active {
+        display: none; 
+    }
+}
+
+.hero{
+    text-align: center;
+    h1 {
+        font-size: 48px; /* Kleinere schermen */
+    }
+
+    p {
+        font-size: 16px;
+        margin: 0 auto;
+        padding: 10px; 
+    }
+
+    a {
+        font-size: 18px;
+        color: black;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero{
+        padding-top: 20px;
+        h1 {
+            font-size: 96px; /* Grotere schermen */
+        }
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+a.home{
+    text-decoration: none;
+    color: black;
+    font-family: 'Martian Mono';
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+body {
+    padding: 5px; 
+    p {
+        font-size: 14px; 
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 10px;
+        p {
+            font-size: 16px; 
+        }
+    }
+}
+
+.filter {
+    display: flex;
+    flex-direction: column; /* Standaard voor kleinere schermen */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.filter ul {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.filter li {
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#search-input {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .filter {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .filter ul {
+        width: auto;
+        margin-left: auto; 
+    }
+
+    .filter li {
+        margin-right: 10px;
+    }
+
+    #search-input {
+        width: auto;
+    }
+}
+
+.block-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Standaard voor kleinere schermen */
+    width: 100%;
+}
+
+.block {
+    border: 1px solid black; 
+    padding: 5px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.block img {
+    width: 100%; /* Zorgt ervoor dat de afbeelding de volledige breedte van het blok inneemt */
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .block-container {
+        grid-template-columns: 1fr 1fr 1fr; /* Drie kolommen op grotere schermen */
+    }
+
+    .block {
+        width: fit-content;
+    }
+}
+
+.vacatureblok {
+    display: flex;
+    flex-direction: column; /* Standaard voor kleinere schermen */
+    justify-content: center; 
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #000000;
+
+    h3{
+        margin: 0; 
+        flex: 1; 
+    }
+}
+
+@media (min-width: 768px) {
+    .vacatureblok {
+        flex-direction: row; /* Horizontaal op grotere schermen */
+        justify-content: space-between;
+    }
+}
+
+.vacaturelink {
+    padding: 10px 20px;
+    margin-left: 0; 
+    white-space: nowrap; 
+    text-decoration: underline;
+    color: blue;
+    font-family: 'Martian Mono';
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+        margin-left: 20px; 
+    }
+}
+
+/* De overige stijlen kunnen ook zo worden aangepast, maar met dezelfde mobiele benadering */
