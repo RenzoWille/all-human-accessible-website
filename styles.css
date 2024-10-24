@@ -20,7 +20,7 @@ header {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     header h1 {
         font-size: 96px; /* Grotere schermen */
     }
@@ -103,7 +103,7 @@ header {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .hero{
         padding-top: 20px;
         h1 {
@@ -126,12 +126,13 @@ a.home{
 
 body {
     padding: 5px; 
+    border: 1px solid black;
     p {
         font-size: 14px; 
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     body {
         padding: 10px;
         p {
@@ -141,12 +142,10 @@ body {
 }
 
 .filter {
-    display: flex;
-    flex-direction: column; /* Standaard voor kleinere schermen */
-    justify-content: center;
-    align-items: center;
+    display: column;
+    justify-content: center; /* Centreer items horizontaal */
+    align-items: center; /* Centreer items verticaal */
     padding: 10px;
-    margin-bottom: 20px;
 
     ul {
         justify-content: center;
@@ -191,7 +190,7 @@ body {
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .filter {
         flex-direction: row;
         justify-content: space-between;
@@ -208,45 +207,81 @@ body {
     }
 
     #search-input {
-        width: auto;
+        width: 25%;
     }
 }
 
 .block-container {
-    display: grid;
-    grid-template-columns: 1fr; /* Standaard voor kleinere schermen */
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    margin-top: auto;
 
     .block {
-        border: 1px solid black; 
+        border-top: 1px solid black; 
+        border-left: 1px solid black; 
+        border-right: 1px solid black;
         padding: 5px;
         display: block;
         width: 100%;
         max-width: 100%;
+        margin-top: auto;
     }
+
     img {
-        width: 100%; /* Zorgt ervoor dat de afbeelding de volledige breedte van het blok inneemt */
+        width: 100%;
         height: auto;
+        margin: 0;
+        border: 1px solid black;
+    }
+
+    .strategy {
+        border: 1px solid black;
+        padding: 2px 5px; /* Samengevoegde padding */
+        max-width: fit-content;
+        display: flex;
+        flex-direction: row; /* Zorg ervoor dat items horizontaal zijn */
+        align-items: center; /* Verticaal centreren */
+        flex-wrap: nowrap; 
+        font-size: 10px;
+        font-family: 'Martian Mono';
+    }
+
+    
+    a {
+        font-family: 'Martian Mono';
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;  
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .block-container {
-        grid-template-columns: 1fr 1fr 1fr; /* Drie kolommen op grotere schermen */
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .block {
-        width: fit-content;
+        flex: 1 1 33.33%;    /* Zorgt ervoor dat elk blok 33% van de breedte inneemt */
+        max-width: 33.33%;   /* Beperkt de breedte tot 33.33% */
+    }
+
+    img{
+        width: 374px;
+        height: 416px;
+        padding: 48px;
+        gap: 8px;
     }
 }
 
 .vacatureblok {
     display: flex;
     flex-direction: column; /* Standaard voor kleinere schermen */
-    justify-content: center; 
-    align-items: center;
     padding: 20px;
-    border: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
 
     h3{
         margin: 0; 
@@ -254,7 +289,7 @@ body {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .vacatureblok {
         flex-direction: row; /* Horizontaal op grotere schermen */
         justify-content: space-between;
@@ -262,19 +297,149 @@ body {
 }
 
 .vacaturelink {
-    padding: 10px 20px;
-    margin-left: 0; 
+    padding-top: 20px;
     white-space: nowrap; 
-    text-decoration: underline;
     color: blue;
     font-family: 'Martian Mono';
     font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         margin-left: 20px; 
     }
 }
 
-/* De overige stijlen kunnen ook zo worden aangepast, maar met dezelfde mobiele benadering */
+.laden{
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 0.5px solid black;
+
+    p{
+        text-align: center;
+        font-family: 'Martian Mono';
+        font-size: 12px;
+        margin: 1em;
+    }
+}
+
+.partners{
+    border-top: 0.5px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 0.5px solid black;
+
+    a {
+        display: block;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        text-decoration: underline;
+        color: blue;
+        font-family: 'martian mono';
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding-left: 5px;
+    }
+
+}
+
+.partner-carousel{
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 0.5px solid black;
+    border-right: 1px solid black;
+
+    img{
+        width: 20%;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+}
+
+footer{
+    display: grid;
+    width: 100%;
+
+    img{
+        display: block;
+        height: 75px;
+        width: auto;
+        padding-left: 5px;
+
+    }
+}
+
+.footer-inloggen{
+    padding-top: 10px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+
+    a {
+        display: block;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        text-decoration: underline;
+        color: blue;
+        font-family: 'martian mono';
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding-left: 5px;
+    }
+}
+
+.footer-links{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+
+    ul{
+        list-style-type: none;
+        padding: 0; 
+        margin: 10px;
+        text-align: left;
+    }
+
+    li{
+        margin-bottom: 1em;
+    }
+
+    a{
+        color: black;
+    }
+}
+
+.footer-info{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-left: 5px;
+}
+
+.footer-2{
+    display: flex;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.socials{
+    padding-top: 15px;
+    padding-left: 10px;
+
+    a{
+        text-decoration: underline;
+    }
+}
+
+.copyright{
+    margin-left: auto;
+    padding-right: 10px;
+
+    p{
+        font-size: 16px;
+    }
+}
